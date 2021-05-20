@@ -4,7 +4,8 @@ node_modules/
 # Generated directories.
 generated/
 out/
-dist/
+/dist/*
+/demo/**/dist/
 .firebase
 
 # Generated files.
@@ -17,3 +18,9 @@ dist/
 #Local config.
 **/.firebaserc
 demo/public/config.js
+
+# add build files.
+!dist/npm__ja.js
+!dist/esm__ja.js
+!dist/index.d.ts
+!dist/firebaseui.css
