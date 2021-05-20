@@ -24,7 +24,7 @@ interface Callbacks {
     authResult: any,
     redirectUrl?: string
   ): boolean;
-  signInFailure?(error: firebaseui.auth.AuthUIError): Promise<void>;
+  signInFailure?(error: firebaseui.auth.AuthUIError): Promise<void>|void;
   uiShown?(): void;
 }
 
@@ -84,11 +84,18 @@ interface ActionCodeSettings {
   dynamicLinkDomain?: string;
 }
 
+interface DisableSignUpConfig {
+  status: boolean;
+  adminEmail?: string;
+  helpLink?: string;
+}
+
 interface EmailSignInOption extends SignInOption {
   forceSameDevice?: boolean;
   requireDisplayName?: boolean;
   signInMethod?: string;
   emailLinkSignIn?(): ActionCodeSettings;
+  disableSignUp?: DisableSignUpConfig;
 }
 
 interface PhoneSignInOption extends SignInOption {
