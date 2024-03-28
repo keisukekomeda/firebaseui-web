@@ -25,7 +25,8 @@
     "test": "npm run build && npm run generate-test-files && ./buildtools/run_tests.sh",
     "serve": "npm run build && npm run generate-test-files && gulp serve",
     "generate-test-files": "./buildtools/generate_test_files.sh",
-    "prepublish": "npm run test && cp -r dist demo/public"
+    "prepublish": "npm run test && cp -r dist demo/public",
+    "build-on-docker": "docker image build -t firebaseui-web . && docker run --rm -v $(pwd):/app -w /app firebaseui-web sh -c 'npm install && npm run build && npm run build build-npm-ja && npm run build build-esm-ja && npm run build build-js-ja'"
   },
   "test": "npm run test",
   "author": "Google",
