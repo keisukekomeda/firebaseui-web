@@ -1,1 +1,1 @@
-* Adds support for disabling new user sign up in email providers, disable new user sign up via project settings and blocking functions.
+- Update `firebase` peer dependency to include `^10.0.0` compat (#1032)
